@@ -20,24 +20,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef __OPENDRONE_TXPROTO_H__
-#define __OPENDRONE_TXPROTO_H__
+#ifndef __OPENDRONE_TXPROTOCOL_H__
+#define __OPENDRONE_TXPROTOCOL_H__
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 #include "stdint.h"
-#include "OpenDrone_TxProto_Msg.h"
+#include "OpenDrone_TxProtocol_Msg.h"
 
 typedef enum {
-	OPENDRONE_TXPROTO_STATUS_SUCCESS = 0,
-	OPENDRONE_TXPROTO_STATUS_FAIL = 1,
-	OPENDRONE_TXPROTO_STATUS_INVALID
-} OpenDrone_TxProto_Status_t;
+	OPENDRONE_TXPROTOCOL_STATUS_SUCCESS = 0,
+	OPENDRONE_TXPROTOCOL_STATUS_FAIL = 1,
+	OPENDRONE_TXPROTOCOL_STATUS_INVALID
+} OpenDrone_TxProtocol_Status_t;
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __OPENDRONE_TXPROTO_H__ */
+#endif /* __OPENDRONE_TXPROTOCOL_H__ */

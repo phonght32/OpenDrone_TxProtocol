@@ -20,8 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef __OPENDRONE_TXPROTO_MSG_H__
-#define __OPENDRONE_TXPROTO_MSG_H__
+#ifndef __OPENDRONE_TXPROTOCOL_MSG_H__
+#define __OPENDRONE_TXPROTOCOL_MSG_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,17 +30,17 @@ extern "C" {
 #include "stdint.h"
 
 typedef enum {
-	OPENDRONE_TXPROTO_MSG_ID_INVALID = 0,
-	OPENDRONE_TXPROTO_MSG_ID_SYS_STATUS,
-	OPENDRONE_TXPROTO_MSG_ID_RAW_OPERATOR_CONTROL,
-	OPENDRONE_TXPROTO_MSG_ID_OPERATOR_CONTROL,
-	OPENDRONE_TXPROTO_MSG_ID_STABILIZER_CONTROL,
-	OPENDRONE_TXPROTO_MSG_ID_SET_MODE,
-	OPENDRONE_TXPROTO_MSG_ID_AUTH,
-	OPENDRONE_TXPROTO_MSG_ID_SET_PARAM,
-	OPENDRONE_TXPROTO_MSG_ID_GET_PARAM,
-	OPENDRONE_TXPROTO_MSG_ID_DEBUG
-} OpenDrone_TxProto_Msg_Id_t;
+	OPENDRONE_TXPROTOCOL_MSG_ID_INVALID = 0,
+	OPENDRONE_TXPROTOCOL_MSG_ID_SYS_STATUS,
+	OPENDRONE_TXPROTOCOL_MSG_ID_RAW_OPERATOR_CONTROL,
+	OPENDRONE_TXPROTOCOL_MSG_ID_OPERATOR_CONTROL,
+	OPENDRONE_TXPROTOCOL_MSG_ID_STABILIZER_CONTROL,
+	OPENDRONE_TXPROTOCOL_MSG_ID_SET_MODE,
+	OPENDRONE_TXPROTOCOL_MSG_ID_AUTH,
+	OPENDRONE_TXPROTOCOL_MSG_ID_SET_PARAM,
+	OPENDRONE_TXPROTOCOL_MSG_ID_GET_PARAM,
+	OPENDRONE_TXPROTOCOL_MSG_ID_DEBUG
+} OpenDrone_TxProtocol_Msg_Id_t;
 
 typedef struct {
 	uint8_t joystick1_pos_x;
@@ -57,27 +57,27 @@ typedef struct {
 	uint8_t button2;
 	uint8_t button3;
 	uint8_t button4;
-} OpenDrone_TxProto_Msg_RawOprCtrl_t;
+} OpenDrone_TxProtocol_Msg_RawOprCtrl_t;
 
 typedef struct {
 	uint8_t throttle;
     uint8_t rudder;
     uint8_t elevator;
     uint8_t aileron;
-} OpenDrone_TxProto_Msg_OprCtrl_t;
+} OpenDrone_TxProtocol_Msg_OprCtrl_t;
 
 typedef struct {
 	uint8_t throttle;
 	uint8_t roll;
 	uint8_t pitch;
 	uint8_t yaw;
-} OpenDrone_TxProto_Msg_StabilizerCtrl_t;
+} OpenDrone_TxProtocol_Msg_StabilizerCtrl_t;
 
 typedef union {
-	OpenDrone_TxProto_Msg_OprCtrl_t OprCtrl;
-	OpenDrone_TxProto_Msg_RawOprCtrl_t RawOprCtrl;
-	OpenDrone_TxProto_Msg_StabilizerCtrl_t StabilizerCtrl;
-} OpenDrone_TxProto_Payload_t;
+	OpenDrone_TxProtocol_Msg_OprCtrl_t OprCtrl;
+	OpenDrone_TxProtocol_Msg_RawOprCtrl_t RawOprCtrl;
+	OpenDrone_TxProtocol_Msg_StabilizerCtrl_t StabilizerCtrl;
+} OpenDrone_TxProtocol_Payload_t;
 
 typedef struct {
 	uint8_t 					StartInd;
@@ -85,13 +85,13 @@ typedef struct {
 	uint8_t 					PktSeq;
 	uint8_t 					SrcId;
 	uint8_t 					DesId;
-	OpenDrone_TxProto_Msg_Id_t 	MsgId;
-	OpenDrone_TxProto_Payload_t Payload;
+	OpenDrone_TxProtocol_Msg_Id_t 	MsgId;
+	OpenDrone_TxProtocol_Payload_t Payload;
 	uint8_t 					Crc;
-} OpenDrone_TxProto_Msg_t;
+} OpenDrone_TxProtocol_Msg_t;
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __OPENDRONE_TXPROTO_MSG_H__ */
+#endif /* __OPENDRONE_TXPROTOCOL_MSG_H__ */
