@@ -43,16 +43,16 @@ typedef enum {
 } OpenDrone_TxProtocol_Msg_Id_t;
 
 typedef struct {
-	uint8_t joystick1_pos_x;
-	uint8_t joystick1_pos_y;
-	uint8_t joystick2_pos_x;
-	uint8_t joystick2_pos_y;
+	int16_t joystick1_pos_x;
+	int16_t joystick1_pos_y;
+	int16_t joystick2_pos_x;
+	int16_t joystick2_pos_y;
 	uint8_t switch1;
 	uint8_t switch2;
 	uint8_t switch3;
 	uint8_t switch4;
-	uint8_t volume1;
-	uint8_t volume2;
+	int16_t volume1;
+	int16_t volume2;
 	uint8_t button1;
 	uint8_t button2;
 	uint8_t button3;
@@ -60,34 +60,34 @@ typedef struct {
 } OpenDrone_TxProtocol_Msg_RawOprCtrl_t;
 
 typedef struct {
-	uint8_t throttle;
-    uint8_t rudder;
-    uint8_t elevator;
-    uint8_t aileron;
+	int16_t throttle;
+	int16_t rudder;
+	int16_t elevator;
+	int16_t aileron;
 } OpenDrone_TxProtocol_Msg_OprCtrl_t;
 
 typedef struct {
-	uint8_t throttle;
-	uint8_t roll;
-	uint8_t pitch;
-	uint8_t yaw;
+	int16_t throttle;
+	int16_t roll;
+	int16_t pitch;
+	int16_t yaw;
 } OpenDrone_TxProtocol_Msg_StabilizerCtrl_t;
 
 typedef union {
-	OpenDrone_TxProtocol_Msg_OprCtrl_t OprCtrl;
-	OpenDrone_TxProtocol_Msg_RawOprCtrl_t RawOprCtrl;
-	OpenDrone_TxProtocol_Msg_StabilizerCtrl_t StabilizerCtrl;
+	OpenDrone_TxProtocol_Msg_OprCtrl_t 			OprCtrl;
+	OpenDrone_TxProtocol_Msg_RawOprCtrl_t 		RawOprCtrl;
+	OpenDrone_TxProtocol_Msg_StabilizerCtrl_t 	StabilizerCtrl;
 } OpenDrone_TxProtocol_Payload_t;
 
 typedef struct {
-	uint8_t 					StartInd;
-	uint8_t 					PktLen;
-	uint8_t 					PktSeq;
-	uint8_t 					SrcId;
-	uint8_t 					DesId;
+	uint8_t 						StartInd;
+	uint8_t 						PktLen;
+	uint8_t 						PktSeq;
+	uint8_t 						SrcId;
+	uint8_t 						DesId;
 	OpenDrone_TxProtocol_Msg_Id_t 	MsgId;
-	OpenDrone_TxProtocol_Payload_t Payload;
-	uint8_t 					Crc;
+	OpenDrone_TxProtocol_Payload_t 	Payload;
+	uint8_t 						Crc;
 } OpenDrone_TxProtocol_Msg_t;
 
 #ifdef __cplusplus
