@@ -30,6 +30,8 @@ extern "C" {
 #include "stdint.h"
 #include "OpenDrone_TxProtocol_Msg.h"
 
+#define OPENDRONE_TXPROTOCOL_MSG_LEN   27
+
 typedef enum {
 	OPENDRONE_TXPROTOCOL_STATUS_SUCCESS = 0,
 	OPENDRONE_TXPROTOCOL_STATUS_FAIL = 1,
